@@ -11,9 +11,9 @@ module load bioinfo-tools bwa/0.7.17 samtools/1.17
 
 RESDIR=$HOME/GenAn_proj_durian/results
 
-#bwa index $RESDIR/canu/canu_assmbly_durian.contigs.fasta
+bwa index $RESDIR/canu/canu_assmbly_durian.contigs.fasta
 
-#bwa aln $RESDIR/canu/canu_assmbly_durian.contigs.fasta $RESDIR/trimmomatic/*P.fastq.gz > $RESDIR/BWA/durian_bwa_aligned.sai
+bwa aln $RESDIR/canu/canu_assmbly_durian.contigs.fasta $RESDIR/trimmomatic/*P.fastq.gz > $RESDIR/BWA/durian_bwa_aligned.sai
 
 bwa samse $RESDIR/canu/canu_assmbly_durian.contigs.fasta $RESDIR/BWA/durian_bwa_aligned.sai $RESDIR/trimmomatic/*P.fastq.gz > $RESDIR/BWA/durian_bwa_aligned.sam
 
