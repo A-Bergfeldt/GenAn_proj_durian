@@ -1,0 +1,24 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -J trimmomatic_short_reads
+#SBATCH -t 3:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user andreas.bergfeldt.0189@student.uu.se
+
+module load bioinfo-tools trimmomatic/0.39
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/trimmomatic
+
+java -jar $TRIMMOMATIC_ROOT/trimmomatic.jar \
+PE \
+$HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/illumina_data/*10.1P.fastq.gz \
+$HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/illumina_data/*10.2P.fastq.gz \
+$SRCDIR/trimmomatic_shortreads1P.fastq.gz \
+$SRCDIR/trimmomatic_shortreads1U.fastq.gz \
+$SRCDIR/trimmomatic_shortreads2P.fastq.gz \
+$SRCDIR/trimmomatic_shortreads2U.fastq.gz \
+ILLUMINACLIP:TruSeq3-SE:2:30:10 \
+LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+

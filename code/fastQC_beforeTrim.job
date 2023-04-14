@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -J fastQC-run
+#SBATCH -t 3:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user andreas.bergfeldt.0189@student.uu.se
+
+module load bioinfo-tools FastQC/0.11.9
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/fastQC/Illumina_before_trim
+
+fastqc \
+-o $SRCDIR \
+$HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/illumina_data/*10.*P.fastq.gz

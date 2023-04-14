@@ -1,1 +1,20 @@
-Test
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 4
+#SBATCH -J canu-run
+#SBATCH -t 24:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user andreas.bergfeldt.0189@student.uu.se
+
+module load bioinfo-tools canu/2.2
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/canu
+
+canu \
+-p canu_assmbly_durian \
+-d $SRCDIR \
+useGrid=false \
+genomeSize=30m \
+corMaxEvidenceErate=0.15 \
+-pacbio-raw $HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/pacbio_data/*10.fq.gz
