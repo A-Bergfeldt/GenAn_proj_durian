@@ -1,0 +1,20 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -J pilon-job
+#SBATCH -t 1:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user andreas.bergfeldt.0189@student.uu.se
+
+module load bioinfo-tools Pilon/1.24  
+
+SRCDIR=$HOME/GenAn_proj_durian/results/Pilon/
+RESDIR=$HOME/GenAn_proj_durian/results
+
+java -jar $PILON_HOME/pilon.jar \
+--genome $RESDIR/canu/canu_assmbly_durian.contigs.fasta \
+--bam $RESDIR/BWA/durian_bwa_aligned_sorted.bam \
+--threads 2 \
+--outdir $SRCDIR \
+--output durian_pilon

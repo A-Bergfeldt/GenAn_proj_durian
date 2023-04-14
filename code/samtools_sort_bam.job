@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -J bam_sort-job
+#SBATCH -t 10:00 --qos=short
+
+module load bioinfo-tools samtools/1.17  
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/BWA
+
+samtools sort -o $SRCDIR/durian_bwa_aligned_sorted.bam $SRCDIR/durian_bwa_aligned.bam
+samtools index $SRCDIR/durian_bwa_aligned_sorted.bam
+  
+
