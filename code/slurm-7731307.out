@@ -1,0 +1,12 @@
+cp: cannot stat ‘/home/andreber/GenAN_proj_durian/results/RepeatMasker/**’: No such file or directory
+	STAR --runThreadN 8 --runMode genomeGenerate --genomeDir /home/andreber/GenAN_proj_durian/results/STAR/index --genomeFastaFiles /scratch/7731307/*.masked
+	STAR version: 2.7.9a   compiled: 2021-10-20T18:01:41+0200 rackham5.uppmax.uu.se:/sw/bioinfo/star/2.7.9a/src/STAR-2.7.9a/source
+Apr 25 13:48:46 ..... started STAR run
+!!!!! WARNING: Could not move Log.out file from ./Log.out into /home/andreber/GenAN_proj_durian/results/STAR/index/Log.out. Will keep ./Log.out
+
+Apr 25 13:48:46 ... starting to generate Genome files
+
+EXITING because of INPUT ERROR: could not open genomeFastaFile: /scratch/7731307/*.masked
+
+Apr 25 13:48:46 ...... FATAL ERROR, exiting
+cp: omitting directory ‘_STARtmp’

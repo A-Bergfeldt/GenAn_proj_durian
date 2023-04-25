@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -J quast-run
+#SBATCH -t 15:00 --qos=short
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user andreas.bergfeldt.0189@student.uu.se
+
+module load python/3.10.8
+pip install quast
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/QUAST
+
+python quast.py -o $SRCDIR -e "/domus/h1/andreber/GenAn_proj_durian/results/Pilon/durian_pilon.fasta"
+

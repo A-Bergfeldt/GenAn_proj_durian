@@ -1,0 +1,79 @@
+[bwa_aln_core] convert to sequence coordinate... 0.79 sec
+[bwa_aln_core] refine gapped alignments... 1.39 sec
+[bwa_aln_core] print alignments... 0.48 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.77 sec
+[bwa_aln_core] refine gapped alignments... 1.34 sec
+[bwa_aln_core] print alignments... 0.46 sec
+[bwa_aln_core] 524288 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.77 sec
+[bwa_aln_core] refine gapped alignments... 1.33 sec
+[bwa_aln_core] print alignments... 0.46 sec
+[bwa_aln_core] 786432 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.87 sec
+[bwa_aln_core] refine gapped alignments... 1.37 sec
+[bwa_aln_core] print alignments... 0.48 sec
+[bwa_aln_core] 1048576 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 1.00 sec
+[bwa_aln_core] refine gapped alignments... 1.32 sec
+[bwa_aln_core] print alignments... 0.49 sec
+[bwa_aln_core] 1310720 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.74 sec
+[bwa_aln_core] refine gapped alignments... 1.31 sec
+[bwa_aln_core] print alignments... 0.51 sec
+[bwa_aln_core] 1572864 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.77 sec
+[bwa_aln_core] refine gapped alignments... 1.30 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 1835008 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.74 sec
+[bwa_aln_core] refine gapped alignments... 1.30 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 2097152 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.79 sec
+[bwa_aln_core] refine gapped alignments... 1.30 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 2359296 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.80 sec
+[bwa_aln_core] refine gapped alignments... 1.34 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 2621440 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.99 sec
+[bwa_aln_core] refine gapped alignments... 1.32 sec
+[bwa_aln_core] print alignments... 0.48 sec
+[bwa_aln_core] 2883584 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.76 sec
+[bwa_aln_core] refine gapped alignments... 1.33 sec
+[bwa_aln_core] print alignments... 0.46 sec
+[bwa_aln_core] 3145728 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.87 sec
+[bwa_aln_core] refine gapped alignments... 1.36 sec
+[bwa_aln_core] print alignments... 0.49 sec
+[bwa_aln_core] 3407872 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.75 sec
+[bwa_aln_core] refine gapped alignments... 1.38 sec
+[bwa_aln_core] print alignments... 0.48 sec
+[bwa_aln_core] 3670016 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.88 sec
+[bwa_aln_core] refine gapped alignments... 1.38 sec
+[bwa_aln_core] print alignments... 0.48 sec
+[bwa_aln_core] 3932160 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.78 sec
+[bwa_aln_core] refine gapped alignments... 1.31 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 4194304 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 1.00 sec
+[bwa_aln_core] refine gapped alignments... 1.31 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 4456448 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.88 sec
+[bwa_aln_core] refine gapped alignments... 1.30 sec
+[bwa_aln_core] print alignments... 0.47 sec
+[bwa_aln_core] 4718592 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 0.52 sec
+[bwa_aln_core] refine gapped alignments... 0.86 sec
+[bwa_aln_core] print alignments... 0.30 sec
+[bwa_aln_core] 4892210 sequences have been processed.
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa samse /home/andreber/GenAn_proj_durian/results/canu/canu_assmbly_durian.contigs.fasta /home/andreber/GenAn_proj_durian/results/BWA/durian_bwa_aligned.sai /home/andreber/GenAn_proj_durian/results/trimmomatic/trimmomatic_shortreads1P.fastq.gz /home/andreber/GenAn_proj_durian/results/trimmomatic/trimmomatic_shortreads2P.fastq.gz
+[main] Real time: 72.239 sec; CPU: 65.024 sec

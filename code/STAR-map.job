@@ -1,0 +1,22 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 8
+#SBATCH -J STAR-job
+#SBATCH -t 15:00 --qos=short
+
+
+module load bioinfo-tools star/2.7.9a 
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/STAR/
+
+cp /crex/proj/genomeanalysis2023/Genome_Analysis/4_Tean_Teh_2017/transcriptome/trimmed/*_10.*.fastq.gz $SNIC_TMP
+cd $SNIC_TMP
+
+STAR \
+--runThreadN 8 \
+--genomeDir $HOME/GenAN_proj_durian/results/Pilon/ \
+--readFilesIn $SNIC_TMP/*.gz
+
+cp *Log.out $SRCDIR
+cp  *.sam $SRCDIR/map

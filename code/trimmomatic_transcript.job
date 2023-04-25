@@ -1,0 +1,22 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 4
+#SBATCH -J trimmomatic_transcriptome
+#SBATCH -t 3:00:00
+
+module load bioinfo-tools trimmomatic/0.39
+
+export SRCDIR=$HOME/GenAn_proj_durian/results/trimmomatic
+
+java -jar $TRIMMOMATIC_ROOT/trimmomatic.jar \
+PE \
+$HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/transcriptome/untrimmed/*10.1.fastq.gz \
+$HOME/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/transcriptome/untrimmed/*10.2.fastq.gz \
+$SRCDIR/trimmomatic_transcriptome1P.fastq.gz \
+$SRCDIR/trimmomatic_transcriptome1U.fastq.gz \
+$SRCDIR/trimmomatic_transcriptome2P.fastq.gz \
+$SRCDIR/trimmomatic_transcriptome2U.fastq.gz \
+ILLUMINACLIP:TruSeq3-SE:2:30:10 \
+LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+
