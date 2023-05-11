@@ -1,0 +1,42 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 12
+#SBATCH -J STAR-job
+#SBATCH -t 1:00:00
+
+
+module load bioinfo-tools star/2.7.9a samtools/1.17 
+
+export SRCDIR=/crex/proj/genomeanalysis2023/nobackup/work/andreasb/results/STAR/diffexp/map
+
+cd $SNIC_TMP
+
+F=(/crex/proj/genomeanalysis2023/nobackup/work/andreasb/tempfiles/*_scaffold_10.1.fastq.gz)
+R=(/crex/proj/genomeanalysis2023/nobackup/work/andreasb/tempfiles/*_scaffold_10.2.fastq.gz)
+
+for i in ${!F[@]}
+do
+
+  echo '------------currently on: '
+  echo ' index' $i
+  echo 'File: ' ${F[i]:63:10}
+  echo 'File: ' ${R[i]:63:10}
+
+
+  STAR \
+  --runThreadN 12 \
+  --genomeDir /crex/proj/genomeanalysis2023/nobackup/work/andreasb/results/STAR/diffexp/index \
+  --readFilesIn ${F[i]} ${R[i]}  \
+  --readFilesCommand zcat \
+  --outFileNamePrefix ${F[i]:63:10} \
+  --limitBAMsortRAM 2292618942 \
+  --outSAMtype BAM SortedByCoordinate
+  
+  samtools index *.bam
+
+  mv *.bam $SRCDIR/
+  mv *.bai $SRCDIR/
+  mv *.out $SRCDIR/
+  
+done

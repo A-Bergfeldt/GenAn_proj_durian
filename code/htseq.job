@@ -1,0 +1,36 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy
+#SBATCH -p core
+#SBATCH -n 1
+#SBATCH -J htseq-job
+#SBATCH -t 01:15:00
+
+module load bioinfo-tools htseq/2.0.2
+
+cd $SNIC_TMP
+cp /crex/proj/genomeanalysis2023/nobackup/work/andreasb/results/STAR/diffexp/map/** $SNIC_TMP
+
+BAMS=(*.bam)
+
+
+for i in ${!BAMS[@]}
+do
+
+  echo '------------currently on: '
+  echo ' index' $i
+  echo 'File: ' ${BAMS[i]:0:10}
+
+  htseq-count \
+  --format bam \
+  --order pos \
+  --stranded yes \
+  -a 10 \
+  -i ID \
+  ${BAMS[i]} \
+  /domus/h1/andreber/GenAn_proj_durian/code/braker/durioZibethinus/GeneMark-ET/genemark.gtf \
+  >/crex/proj/genomeanalysis2023/nobackup/work/andreasb/results/htseq/${BAMS[i]:0:10}
+  
+done
+
+
+

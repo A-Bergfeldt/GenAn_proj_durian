@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH -A uppmax2023-2-8 -M snowy 
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -t 00:15:00 --qos=short 
+#SBATCH -J Braker_fa_fix 
+
+export $SRCDIR=$HOME/GenAn_proj_durian/results/BRAKER
+
+module load bioinfo-tools
+module load braker
+module load biopython/1.80-py3.10.8
+
+getAnnoFastaFromJoingenes.py -g $HOME/GenAn_proj_durian/code/braker/durioZibethinus/genome.fa -f $HOME/GenAn_proj_durian/code/braker/durioZibethinus/augustus.hints.gff -o $HOME/GenAn_proj_durian/results/BRAKER/durian_protein.fa

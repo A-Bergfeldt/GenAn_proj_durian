@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH -A uppmax2023-2-8 -M snowy
 #SBATCH -p core
-#SBATCH -n 2
+#SBATCH -n 4
 #SBATCH -J RM-run
 #SBATCH -t 8:00:00
 
@@ -11,4 +11,5 @@ export SRCDIR=$HOME/GenAn_proj_durian/results/RepeatMasker
 
 RepeatMasker \
 --species "Durio zibethinus" \
+--xsmall \
 $HOME/GenAn_proj_durian/results/Pilon/durian_pilon.fasta

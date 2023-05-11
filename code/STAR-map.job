@@ -8,15 +8,16 @@
 
 module load bioinfo-tools star/2.7.9a 
 
-export SRCDIR=$HOME/GenAn_proj_durian/results/STAR/
+export SRCDIR=$HOME/GenAn_proj_durian/results/STAR/map
 
-cp /crex/proj/genomeanalysis2023/Genome_Analysis/4_Tean_Teh_2017/transcriptome/trimmed/*_10.*.fastq.gz $SNIC_TMP
+cp $HOME/GenAn_proj_durian/results/trimmomatic/trimmomatic_transcriptome*P.fastq.gz $SNIC_TMP
 cd $SNIC_TMP
 
 STAR \
 --runThreadN 8 \
---genomeDir $HOME/GenAN_proj_durian/results/Pilon/ \
---readFilesIn $SNIC_TMP/*.gz
+--genomeDir $HOME/GenAn_proj_durian/results/STAR/index \
+--readFilesIn $SNIC_TMP/*.gz \
+--readFilesCommand zcat
 
 cp *Log.out $SRCDIR
-cp  *.sam $SRCDIR/map
+cp  *.sam $SRCDIR
