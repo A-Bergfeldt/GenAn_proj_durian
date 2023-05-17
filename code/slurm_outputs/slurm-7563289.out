@@ -1,6 +1,0 @@
-trimmomatic/0.39 loaded, see 'module help trimmomatic/0.39' for more information.
-TrimmomaticPE: Started with arguments:
- -trimlog trimmomatic_illumina_log /home/andreber/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.1P.fastq.gz /home/andreber/GenAn_proj_durian/raw_data/4_Tean_Teh_2017/illumina_data/SRR6058604_scaffold_10.2P.fastq.gz /home/andreber/GenAn_proj_durian/results/trimmomatic/trimmomatic_output_1p.fasta.gz /home/andreber/GenAn_proj_durian/results/trimmomatic/trimmomatic_output_2p.fasta.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-Quality encoding detected as phred33
-Input Read Pairs: 4892210 Both Surviving: 4892210 (100.00%) Forward Only Surviving: 0 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
-TrimmomaticPE: Completed successfully
